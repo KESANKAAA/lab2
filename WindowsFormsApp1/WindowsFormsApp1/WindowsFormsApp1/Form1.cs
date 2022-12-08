@@ -185,35 +185,48 @@ namespace WindowsFormsApp1
                         list.Add(new List<(float, float)>());
                         Console.WriteLine(list.Count);
                     }
-                  
-                    for (int i = 0; i < 24; i++)
-                    {
-                        list[0].Add(lst[i]);                      
-                    }
 
-                    for (int i = 24; i < 48; i++)
+                    for (int i = 0; i < 6; i++)
+                    {
+                        list[0].Add(lst[i]);
+                        Console.WriteLine(list[0][i]);
+                    }
+                    Console.WriteLine("");
+
+                    for (int i = 6; i < 12; i++)
                     {
                         list[1].Add(lst[i]);
+                        Console.WriteLine(list[1][i - 6]);
                     }
+                    Console.WriteLine("");
 
-                    for (int i = 48; i < 60; i++)
+
+                    for (int i = 12; i < 24; i++)
                     {
                         list[2].Add(lst[i]);
+                        Console.WriteLine(list[2][i - 12]);
                     }
+                    Console.WriteLine("");
 
-                    for (int i = 60; i < 72; i++)
+                    for (int i = 24; i < 36; i++)
                     {
                         list[3].Add(lst[i]);
+                        Console.WriteLine(list[3][i - 24]);
                     }
+                    Console.WriteLine("");
 
-                    for (int i = 72; i < 78; i++)
+                    for (int i = 36; i < 60; i++)
                     {
                         list[4].Add(lst[i]);
+                        Console.WriteLine(list[4][i - 36]);
                     }
-                    for (int i = 78; i < 84; i++)
+                    Console.WriteLine("");
+                    for (int i = 60; i < 84; i++)
                     {
                         list[5].Add(lst[i]);
+                        Console.WriteLine(list[5][i - 60]);
                     }
+                    Console.WriteLine("");
                     break;
 
                 case 252:
@@ -401,36 +414,35 @@ namespace WindowsFormsApp1
                     break;
 
                 case 84:
-                    int ks = 0;
 
-                    for (int i = 0; i < 6; i++)
+                    for (int i = 0; i < 12; i++)
                     {
-                        plato.DrawLine(p1, list[4][i].Item1, list[4][i].Item2, list[5][i].Item1, list[5][i].Item2);
-                    }
 
-                    Console.WriteLine(list[4].Count + " " + list[5].Count);
-
-                    for (int i = 0; i < 6; i++)
-                    {
-                        plato.DrawLine(p1, list[3][ks].Item1, list[3][ks].Item2, list[4][i].Item1, list[4][i].Item2);
-                        ks += 2;
-                    }
-                    ks = 0;
-                    for (int i = 0; i < 12; i++) 
-                    {
-                        plato.DrawLine(p1, list[2][i].Item1, list[2][i].Item2, list[3][i].Item1, list[3][i].Item2);
                     }
 
                     for (int i = 0; i < 12; i++)
                     {
-                        plato.DrawLine(p1, list[1][ks].Item1, list[1][ks].Item2, list[2][i].Item1, list[2][i].Item2);
-                        ks += 2;
+
                     }
 
                     for (int i = 0; i < 24; i++)
                     {
-                        plato.DrawLine(p1, list[0][i].Item1, list[0][i].Item2, list[1][i].Item1, list[1][i].Item2);
+
                     }
+
+                    for (int i = 0; i < 24; i++)
+                    {
+
+                    }
+
+                    Console.WriteLine(list[5].Count);
+
+                    for (int i = 0; i < 10; i++)
+                    {
+                        plato.DrawLine(p1, list[4][i].Item1, list[4][i].Item2, list[5][i].Item1, list[5][i].Item2);
+                    }
+
+                    plato.DrawLine(p1, list[0][0].Item1, list[0][0].Item2, list[1][0].Item1, list[1][0].Item2);
 
                     break;
 
